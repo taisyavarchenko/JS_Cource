@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</head>
+<style>
+    #tabs {
+        margin: 10px 0;
+    }
+
+    .tabs-nav {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tabs-nav li {
+        display: block;
+        float: left;
+        padding: 0;
+        list-style: none;
+    }
+
+    .tabs-nav a {
+        display: block;
+        padding: 10px 20px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        background: #fbfbfb;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        color: #999;
+    }
+
+    .tabs-nav li:first-child a {
+        border-radius: 5px 0 0 0;
+    }
+
+    .tabs-nav li:last-child a {
+        display: block;
+        border-right: 1px solid #ccc;
+        border-radius: 0 5px 0 0;
+    }
+
+    .tabs-nav a.active {
+        border-bottom: 1px solid #fff;
+        background: #fff;
+        color: #000;
+    }
+
+    .tabs-items {
+        border: 1px solid #ccc;
+        border-radius: 0 5px 5px 5px;
+        background: #fff;
+        margin: -1px 0 0 0;
+        padding: 15px;
+    }
+</style>
+
+<body>
+    <div id="tabs">
+        <!-- Кнопки -->
+        <ul class="tabs-nav">
+            <li><a href="#tab-1">Информация</a></li>
+            <li><a href="#tab-2">Труды</a></li>
+            <li><a href="#tab-3">Книги и Фильмы</a></li>
+        </ul>
+
+        <div class="tabs-items">
+            <div class="tabs-item" id="tab-1">
+                <img alt="Sigmund Freud, by Max Halberstadt (cropped).jpg"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg/320px-Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg"
+                    decoding="async" width="250" height="340"
+                    srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg/375px-Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg/500px-Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg 2x"
+                    data-file-width="1647" data-file-height="2240">
+                <p><b>Зи́гмунд Фрейд</b> (правильная транскрипция&nbsp;— <b>Фройд</b><sup id="cite_ref-5"
+                        class="reference"><a href="#cite_note-5">[5]</a></sup>; так как <a
+                        href="/wiki/%D0%9D%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA"
+                        title="Немецкий язык">нем.</a>&nbsp;<span lang="de" style="font-style:italic;">Sigmund
+                        Freud</span>, <small>немецкое произношение: </small><span class="IPA"><a
+                            href="/wiki/%D0%9C%D0%A4%D0%90" class="mw-redirect" title="МФА">[ˈziːkmʊnt
+                            ˈfʁɔʏt]</a></span>; полное имя <b>Зигисму́нд Шло́мо Фройд</b>, <a
+                        href="/wiki/%D0%9D%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA"
+                        title="Немецкий язык">нем.</a>&nbsp;<span lang="de" style="font-style:italic;">Sigismund Schlomo
+                        Freud</span>; <a href="/wiki/6_%D0%BC%D0%B0%D1%8F" title="6 мая">6 мая</a> <a
+                        href="/wiki/1856_%D0%B3%D0%BE%D0%B4" title="1856 год">1856</a>, <a
+                        href="/wiki/%D0%9F%D1%80%D1%88%D0%B8%D0%B1%D0%BE%D1%80" title="Пршибор">Фрайберг</a>, <a
+                        href="/wiki/%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%B8%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F"
+                        title="Австрийская империя">Австрийская империя</a>&nbsp;— <a
+                        href="/wiki/23_%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8F" title="23 сентября">23
+                        сентября</a> <a href="/wiki/1939_%D0%B3%D0%BE%D0%B4" title="1939 год">1939</a>, <a
+                        href="/wiki/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD" title="Лондон">Лондон</a>, <a
+                        href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D1%8F" title="Англия">Англия</a>, <a
+                        href="/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F"
+                        title="Великобритания">Великобритания</a>)&nbsp;— <a
+                        href="/wiki/%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B8%D1%8F" title="Австрия">австрийский</a> <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3" title="Психолог">психолог</a>, <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA"
+                        class="mw-redirect" title="Психоаналитик">психоаналитик</a>, <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80" class="mw-redirect"
+                        title="Психиатр">психиатр</a> и <a href="/wiki/%D0%9D%D0%B5%D0%B2%D1%80%D0%BE%D0%BB%D0%BE%D0%B3"
+                        title="Невролог">невролог</a>.
+                </p>
+                <p>Зигмунд Фрейд наиболее известен как основатель <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7"
+                        title="Психоанализ">психоанализа</a>, который оказал значительное влияние на <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F"
+                        title="Психология">психологию</a>, <a
+                        href="/wiki/%D0%9C%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D0%B0" title="Медицина">медицину</a>, <a
+                        href="/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F"
+                        title="Социология">социологию</a>, <a
+                        href="/wiki/%D0%90%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F"
+                        title="Антропология">антропологию</a>, <a
+                        href="/wiki/%D0%9B%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0"
+                        title="Литература">литературу</a> и <a
+                        href="/wiki/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE"
+                        title="Искусство">искусство</a> <a href="/wiki/XX_%D0%B2%D0%B5%D0%BA" title="XX век">XX
+                        века</a><sup id="cite_ref-_7656cb6b0b23ea34_6-0" class="reference"><a
+                            href="#cite_note-_7656cb6b0b23ea34-6">[6]</a></sup><sup id="cite_ref-_6d51b5836346f2bb_7-0"
+                        class="reference"><a href="#cite_note-_6d51b5836346f2bb-7">[7]</a></sup>. Воззрения Фрейда на
+                    природу человека были новаторскими для его времени, и на протяжении всей жизни психолога его работы
+                    не прекращали вызывать резонанс и критику в научном сообществе. Интерес к теориям учёного не угасает
+                    и по сей день<sup id="cite_ref-_6d51b5836346f2bb_7-1" class="reference"><a
+                            href="#cite_note-_6d51b5836346f2bb-7">[7]</a></sup><sup id="cite_ref-8" class="reference"><a
+                            href="#cite_note-8">[8]</a></sup><sup id="cite_ref-_5adb96c15b9af1ad_9-0"
+                        class="reference"><a href="#cite_note-_5adb96c15b9af1ad-9">[9]</a></sup>.
+                </p>
+                <p>Зигмунд Фрейд наиболее известен как основатель <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7"
+                        title="Психоанализ">психоанализа</a>, который оказал значительное влияние на <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F"
+                        title="Психология">психологию</a>, <a
+                        href="/wiki/%D0%9C%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D0%B0" title="Медицина">медицину</a>, <a
+                        href="/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F"
+                        title="Социология">социологию</a>, <a
+                        href="/wiki/%D0%90%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F"
+                        title="Антропология">антропологию</a>, <a
+                        href="/wiki/%D0%9B%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0"
+                        title="Литература">литературу</a> и <a
+                        href="/wiki/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE"
+                        title="Искусство">искусство</a> <a href="/wiki/XX_%D0%B2%D0%B5%D0%BA" title="XX век">XX
+                        века</a><sup id="cite_ref-_7656cb6b0b23ea34_6-0" class="reference"><a
+                            href="#cite_note-_7656cb6b0b23ea34-6">[6]</a></sup><sup id="cite_ref-_6d51b5836346f2bb_7-0"
+                        class="reference"><a href="#cite_note-_6d51b5836346f2bb-7">[7]</a></sup>. Воззрения Фрейда на
+                    природу человека были новаторскими для его времени, и на протяжении всей жизни психолога его работы
+                    не прекращали вызывать резонанс и критику в научном сообществе. Интерес к теориям учёного не угасает
+                    и по сей день<sup id="cite_ref-_6d51b5836346f2bb_7-1" class="reference"><a
+                            href="#cite_note-_6d51b5836346f2bb-7">[7]</a></sup><sup id="cite_ref-8" class="reference"><a
+                            href="#cite_note-8">[8]</a></sup><sup id="cite_ref-_5adb96c15b9af1ad_9-0"
+                        class="reference"><a href="#cite_note-_5adb96c15b9af1ad-9">[9]</a></sup>.
+                </p>
+                <p><b>Зи́гмунд Фрейд</b> (правильная транскрипция&nbsp;— <b>Фройд</b><sup id="cite_ref-5"
+                        class="reference"><a href="#cite_note-5">[5]</a></sup>; так как <a
+                        href="/wiki/%D0%9D%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA"
+                        title="Немецкий язык">нем.</a>&nbsp;<span lang="de" style="font-style:italic;">Sigmund
+                        Freud</span>, <small>немецкое произношение: </small><span class="IPA"><a
+                            href="/wiki/%D0%9C%D0%A4%D0%90" class="mw-redirect" title="МФА">[ˈziːkmʊnt
+                            ˈfʁɔʏt]</a></span>; полное имя <b>Зигисму́нд Шло́мо Фройд</b>, <a
+                        href="/wiki/%D0%9D%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA"
+                        title="Немецкий язык">нем.</a>&nbsp;<span lang="de" style="font-style:italic;">Sigismund Schlomo
+                        Freud</span>; <a href="/wiki/6_%D0%BC%D0%B0%D1%8F" title="6 мая">6 мая</a> <a
+                        href="/wiki/1856_%D0%B3%D0%BE%D0%B4" title="1856 год">1856</a>, <a
+                        href="/wiki/%D0%9F%D1%80%D1%88%D0%B8%D0%B1%D0%BE%D1%80" title="Пршибор">Фрайберг</a>, <a
+                        href="/wiki/%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%B8%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F"
+                        title="Австрийская империя">Австрийская империя</a>&nbsp;— <a
+                        href="/wiki/23_%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8F" title="23 сентября">23
+                        сентября</a> <a href="/wiki/1939_%D0%B3%D0%BE%D0%B4" title="1939 год">1939</a>, <a
+                        href="/wiki/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD" title="Лондон">Лондон</a>, <a
+                        href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D1%8F" title="Англия">Англия</a>, <a
+                        href="/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F"
+                        title="Великобритания">Великобритания</a>)&nbsp;— <a
+                        href="/wiki/%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B8%D1%8F" title="Австрия">австрийский</a> <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3" title="Психолог">психолог</a>, <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA"
+                        class="mw-redirect" title="Психоаналитик">психоаналитик</a>, <a
+                        href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80" class="mw-redirect"
+                        title="Психиатр">психиатр</a> и <a href="/wiki/%D0%9D%D0%B5%D0%B2%D1%80%D0%BE%D0%BB%D0%BE%D0%B3"
+                        title="Невролог">невролог</a>.
+                </p>
+                <p>Несмотря на то, что влияние идей и личности Фрейда на психологию неоспоримо, многие исследователи
+                    считают его труды интеллектуальным шарлатанством<sup id="cite_ref-10" class="reference"><a
+                            href="#cite_note-10">[10]</a></sup>. Практически каждый фундаментальный для фрейдовской
+                    теории постулат был подвергнут критике со стороны видных учёных и писателей, таких как <a
+                        href="/wiki/%D0%AF%D1%81%D0%BF%D0%B5%D1%80%D1%81,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%A2%D0%B5%D0%BE%D0%B4%D0%BE%D1%80"
+                        class="mw-redirect" title="Ясперс, Карл Теодор">Карл Ясперс</a>, <a
+                        href="/wiki/%D0%A4%D1%80%D0%BE%D0%BC%D0%BC,_%D0%AD%D1%80%D0%B8%D1%85" title="Фромм, Эрих">Эрих
+                        Фромм</a><sup id="cite_ref-voppsy2_11-0" class="reference"><a
+                            href="#cite_note-voppsy2-11">[11]</a></sup>, <a
+                        href="/wiki/%D0%AD%D0%BB%D0%BB%D0%B8%D1%81,_%D0%90%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82"
+                        title="Эллис, Альберт">Альберт Эллис</a><sup id="cite_ref-ellis_12-0" class="reference"><a
+                            href="#cite_note-ellis-12">[12]</a></sup>, <a
+                        href="/wiki/%D0%9A%D1%80%D0%B0%D1%83%D1%81,_%D0%9A%D0%B0%D1%80%D0%BB" title="Краус, Карл">Карл
+                        Краус</a><sup id="cite_ref-kraus_13-0" class="reference"><a
+                            href="#cite_note-kraus-13">[13]</a></sup> и многих других. <a
+                        href="/wiki/%D0%AD%D0%BC%D0%BF%D0%B8%D1%80%D0%B8%D0%B7%D0%BC" title="Эмпиризм">Эмпирический</a>
+                    базис теории Фрейда называли «неадекватным» <span data-interwiki-lang="en"
+                        data-interwiki-article="Frederick Crews"><a
+                            href="/w/index.php?title=%D0%9A%D1%80%D1%8E%D1%81,_%D0%A4%D1%80%D0%B5%D0%B4%D0%B5%D1%80%D0%B8%D0%BA&amp;action=edit&amp;redlink=1"
+                            class="new" title="Крюс, Фредерик (страница отсутствует)">Фредерик Крюс</a></span><span
+                        style="font-style:normal; font-weight:normal;"><sup class="noprint"><a
+                                href="https://en.wikipedia.org/wiki/Frederick_Crews" class="extiw"
+                                title="en:Frederick Crews"><span
+                                    title="Frederick Crews — версия статьи «Крюс, Фредерик» на английском языке">[en]</span></a></sup></span>
+                    и <a href="/wiki/%D0%93%D1%80%D1%8E%D0%BD%D0%B1%D0%B0%D1%83%D0%BC,_%D0%90%D0%B4%D0%BE%D0%BB%D1%8C%D1%84"
+                        title="Грюнбаум, Адольф">Адольф Грюнбаум</a><sup id="cite_ref-2gues_14-0" class="reference"><a
+                            href="#cite_note-2gues-14">[14]</a></sup>, «мошенничеством» психоанализ окрестил <a
+                        href="/wiki/%D0%9C%D0%B5%D0%B4%D0%B0%D0%B2%D0%B0%D1%80,_%D0%9F%D0%B8%D1%82%D0%B5%D1%80_%D0%91%D1%80%D0%B0%D0%B9%D0%B0%D0%BD"
+                        title="Медавар, Питер Брайан">Питер Медавар</a><sup id="cite_ref-medavar_15-0"
+                        class="reference"><a href="#cite_note-medavar-15">[15]</a></sup>, <a
+                        href="/wiki/%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%BD%D0%B0%D1%83%D0%BA%D0%B0"
+                        title="Псевдонаука">псевдонаучной</a> теорию Фрейда считал <a
+                        href="/wiki/%D0%9F%D0%BE%D0%BF%D0%BF%D0%B5%D1%80,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%A0%D0%B0%D0%B9%D0%BC%D1%83%D0%BD%D0%B4"
+                        class="mw-redirect" title="Поппер, Карл Раймунд">Карл Поппер</a><sup id="cite_ref-asshole_16-0"
+                        class="reference"><a href="#cite_note-asshole-16">[16]</a></sup>.
+                </p>
+                <p>За свою жизнь Фрейд написал и опубликовал огромное количество научных работ&nbsp;— полное собрание
+                    его сочинений составляет 26 томов<sup id="cite_ref-bibliofull_17-0" class="reference"><a
+                            href="#cite_note-bibliofull-17">[17]</a></sup>. Он имел звания <a
+                        href="/wiki/%D0%94%D0%BE%D0%BA%D1%82%D0%BE%D1%80_%D0%BD%D0%B0%D1%83%D0%BA"
+                        title="Доктор наук">доктора медицины</a>, <a
+                        href="/wiki/%D0%9F%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%BE%D1%80"
+                        title="Профессор">профессора</a>, почётного доктора права <a
+                        href="/wiki/%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82_%D0%9A%D0%BB%D0%B0%D1%80%D0%BA%D0%B0"
+                        title="Университет Кларка">Университета Кларка</a> и являлся иностранным членом <a
+                        href="/wiki/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BA%D0%BE%D1%80%D0%BE%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE"
+                        title="Лондонское королевское общество">Лондонского королевского общества</a>, обладателем <a
+                        href="/wiki/%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%8F_%D0%93%D1%91%D1%82%D0%B5"
+                        title="Премия Гёте">премии Гёте</a>, являлся почётным членом <span data-interwiki-lang="en"
+                        data-interwiki-article="American Psychoanalytic Association"><a
+                            href="/w/index.php?title=%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B0%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F&amp;action=edit&amp;redlink=1"
+                            class="new"
+                            title="Американская психоаналитическая ассоциация (страница отсутствует)">Американской
+                            психоаналитической ассоциации</a></span><span
+                        style="font-style:normal; font-weight:normal;"><sup class="noprint"><a
+                                href="https://en.wikipedia.org/wiki/American_Psychoanalytic_Association" class="extiw"
+                                title="en:American Psychoanalytic Association"><span
+                                    title="American Psychoanalytic Association — версия статьи «Американская психоаналитическая ассоциация» на английском языке">[en]</span></a></sup></span>,
+                    <span data-interwiki-lang="en" data-interwiki-article="Société Française de Psychanalyse"><a
+                            href="/w/index.php?title=%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE&amp;action=edit&amp;redlink=1"
+                            class="new"
+                            title="Французское психоаналитическое общество (страница отсутствует)">Французского
+                            психоаналитического общества</a></span><span
+                        style="font-style:normal; font-weight:normal;"><sup class="noprint"><a
+                                href="https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_Fran%C3%A7aise_de_Psychanalyse"
+                                class="extiw" title="en:Société Française de Psychanalyse"><span
+                                    title="Société Française de Psychanalyse — версия статьи «Французское психоаналитическое общество» на английском языке">[en]</span></a></sup></span>
+                    и <a href="/wiki/%D0%91%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE"
+                        title="Британское психологическое общество">Британского психологического общества</a><sup
+                        id="cite_ref-_cb1c82c3933b84e4_18-0" class="reference"><a
+                            href="#cite_note-_cb1c82c3933b84e4-18">[18]</a></sup><sup id="cite_ref-19"
+                        class="reference"><a href="#cite_note-19">[19]</a></sup><sup
+                        id="cite_ref-_8b1fca57efd4bb3e_20-0" class="reference"><a
+                            href="#cite_note-_8b1fca57efd4bb3e-20">[20]</a></sup>.
+                </p>
+            </div>
+            <div class="tabs-item" id="tab-2">
+                <h3><span
+                        id=".D0.A2.D1.80.D1.83.D0.B4.D1.8B_.D0.97.D0.B8.D0.B3.D0.BC.D1.83.D0.BD.D0.B4.D0.B0_.D0.A4.D1.80.D0.B5.D0.B9.D0.B4.D0.B0"></span><span
+                        class="mw-headline" id="Труды_Зигмунда_Фрейда">Труды Зигмунда Фрейда</span></h3>
+                <ul>
+                    <li>1895 <i>Исследования истерии</i></li>
+                    <li>1896 <i>Об этиологии истерии</i></li>
+                    <li>1899 <i><a
+                                href="/wiki/%D0%A2%D0%BE%D0%BB%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81%D0%BD%D0%BE%D0%B2%D0%B8%D0%B4%D0%B5%D0%BD%D0%B8%D0%B9_(%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0_%D0%97%D0%B8%D0%B3%D0%BC%D1%83%D0%BD%D0%B4%D0%B0_%D0%A4%D1%80%D0%B5%D0%B9%D0%B4%D0%B0)"
+                                title="Толкование сновидений (книга Зигмунда Фрейда)">Толкование сновидений</a></i></li>
+                    <li>1901 <i><a
+                                href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BF%D0%B0%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F_%D0%BE%D0%B1%D1%8B%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8"
+                                title="Психопатология обыденной жизни">Психопатология обыденной жизни</a></i></li>
+                    <li>1905 <i>Три очерка по теории сексуальности</i></li>
+                    <li>1910 <i>О психоанализе</i></li>
+                    <li>1913 <i><a href="/wiki/%D0%A2%D0%BE%D1%82%D0%B5%D0%BC_%D0%B8_%D1%82%D0%B0%D0%B1%D1%83"
+                                title="Тотем и табу">Тотем и табу</a></i></li>
+                    <li>1915 <i>Влечения и их судьбы</i></li>
+                    <li>1916 <i>Печаль и меланхолия</i></li>
+                    <li>1917 <i>Введение в психоанализ. Лекции</i></li>
+                    <li>1920 <i><a
+                                href="/wiki/%D0%9F%D0%BE_%D1%82%D1%83_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%83_%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%B0_%D1%83%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%B8%D1%8F"
+                                title="По ту сторону принципа удовольствия">По ту сторону принципа удовольствия</a></i>
+                    </li>
+                    <li>1921 <i><a
+                                href="/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F_%D0%BC%D0%B0%D1%81%D1%81_%D0%B8_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D0%AF"
+                                title="Психология масс и анализ Я">Психология масс и анализ человеческого «Я»</a></i>
+                    </li>
+                    <li>1923 <i>Я и Оно</i></li>
+                    <li>1927 <i><a
+                                href="/wiki/%D0%91%D1%83%D0%B4%D1%83%D1%89%D0%B5%D0%B5_%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D0%B8%D0%BB%D0%BB%D1%8E%D0%B7%D0%B8%D0%B8"
+                                title="Будущее одной иллюзии">Будущее одной иллюзии</a></i></li>
+                    <li>1930 <i><a
+                                href="/wiki/%D0%9D%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%BE%D0%B9"
+                                title="Недовольство культурой">Недовольство культурой</a></i></li>
+                </ul>
+            </div>
+            <div class="tabs-item" id="tab-3">
+                <h3><span
+                        id=".D0.9A.D0.BD.D0.B8.D0.B3.D0.B8_.D0.BE_.D0.97.D0.B8.D0.B3.D0.BC.D1.83.D0.BD.D0.B4.D0.B5_.D0.A4.D1.80.D0.B5.D0.B9.D0.B4.D0.B5"></span><span
+                        class="mw-headline" id="Книги_о_Зигмунде_Фрейде">Книги о Зигмунде Фрейде</span></h3>
+                <ul>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Дадун, Роже.</i>
+                            Фрейд.&nbsp;— <abbr title="Москва">М.</abbr>: Х.Г.С, 1994.&nbsp;— 512&nbsp;с.&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/5758800406"
+                                class="internal mw-magiclink-isbn">ISBN 5-7588-0040-6</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Касафонт, Хосеп
+                                Рамон.</i> Зигмунд Фрейд / пер. с исп. А. Берковой.&nbsp;— <abbr
+                                title="Москва">М.</abbr>: АСТ, 2006.&nbsp;— 253&nbsp;с.&nbsp;— (Биография и
+                            творчество).&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/5170372817"
+                                class="internal mw-magiclink-isbn">ISBN 5-17-037281-7</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i><a
+                                    href="/wiki/%D0%94%D0%B6%D0%BE%D0%BD%D1%81,_%D0%AD%D1%80%D0%BD%D0%B5%D1%81%D1%82"
+                                    title="Джонс, Эрнест">Джонс, Эрнест</a>.</i> Жизнь и творения Зигмунда Фрейда / пер.
+                            с англ. В. Старовойтова.&nbsp;— <abbr title="Москва">М.</abbr>: Гуманитарий АГИ,
+                            1996.&nbsp;— 448&nbsp;с.&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/5892210065"
+                                class="internal mw-magiclink-isbn">ISBN 5-89221-006-5</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Штеренсис, Михаил.</i>
+                            Зигмунд Фрейд.&nbsp;— ISRADON / ИсраДон, Феникс, 2012.&nbsp;— 160&nbsp;с.&nbsp;— (След в
+                            истории).&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/9785222192269"
+                                class="internal mw-magiclink-isbn">ISBN 978-5-222-19226-9</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Надеждин, Николай.</i>
+                            Зигмунд Фрейд. «За гранью сознания».&nbsp;— Майор, 2011.&nbsp;— 192&nbsp;с.&nbsp;—
+                            (Неформальные биографии).&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/9785985511352"
+                                class="internal mw-magiclink-isbn">ISBN 978-5-98551-135-2</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Феррис, Пол.</i> Зигмунд
+                            Фрейд / пер. с англ. Екатерины Мартинкевич.&nbsp;— Минск: Попурри, 2001.&nbsp;—
+                            448&nbsp;с.&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/9854385264"
+                                class="internal mw-magiclink-isbn">ISBN 985-438-526-4</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Стоун, Ирвинг.</i>
+                            Страсти ума. Биографический роман о Зигмунде Фрейде / пер. с англ. И. Усачёва.&nbsp;— <abbr
+                                title="Москва">М.</abbr>: АСТ, 2011.&nbsp;— 864&nbsp;с.&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/9785170720514"
+                                class="internal mw-magiclink-isbn">ISBN 978-5-17-072051-4</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Бабен, Пьер.</i> Зигмунд
+                            Фрейд. Трагик в возрасте науки / пер. с фр. Елены Сутоцкой.&nbsp;— <abbr
+                                title="Москва">М.</abbr>: АСТ, 2003.&nbsp;— 144&nbsp;с.&nbsp;— (Наука. Открытие).&nbsp;—
+                            <a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/2070530981"
+                                class="internal mw-magiclink-isbn">ISBN 2-07-053098-1</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Берри, Рут.</i> Зигмунд
+                            Фрейд. Путеводитель для начинающих. Жизнь и учение основателя психоанализа.&nbsp;— Гиппо,
+                            2010.&nbsp;— 128&nbsp;с.&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/9785916060034"
+                                class="internal mw-magiclink-isbn">ISBN 978-5-91606-003-4</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Виттельс, Фриц.</i>
+                            Фрейд. Его личность, учение и школа / пер. с нем. Г. Таубмана.&nbsp;— КомКнига, 2007.&nbsp;—
+                            200&nbsp;с.&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/5484008824"
+                                class="internal mw-magiclink-isbn">ISBN 5-484-00882-4</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Маркус, Герорг.</i>
+                            Зигмунд Фрейд и тайны души. Биография / пер. с англ. А. Журавеля.&nbsp;— АСТ, 2008.&nbsp;—
+                            336&nbsp;с.&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/9785170493333"
+                                class="internal mw-magiclink-isbn">ISBN 978-5-17-049333-3</a>.</span></li>
+                    <li><span class="citation no-wikidata" data-wikidata-property-id="P1343"><i>Браун, Джеймс.</i>
+                            Психология Фрейда и постфрейдисты / пер. с англ..&nbsp;— <abbr title="Москва">М.</abbr>:
+                            Рефл-бук, 1997.&nbsp;— 304&nbsp;с.&nbsp;— (Актуальная психология).&nbsp;— <a
+                                href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/5879830276"
+                                class="internal mw-magiclink-isbn">ISBN 5-87983-027-6</a>.</span></li>
+                    <li><i><a href="/w/index.php?title=%D0%9B%D1%8E%D0%BA%D0%B8%D0%BC%D1%81%D0%BE%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87&amp;action=edit&amp;redlink=1"
+                                class="new" title="Люкимсон, Пётр Ефимович (страница отсутствует)">Люкимсон П.</a></i>
+                        Фрейд&nbsp;: история болезни.&nbsp;— М.&nbsp;: Молодая гвардия, 2014.&nbsp;— 461 с., [16] л.
+                        ил.&nbsp;— (<a
+                            href="/wiki/%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BB%D1%8E%D0%B4%D0%B5%D0%B9"
+                            title="Жизнь замечательных людей">Жизнь замечательных людей</a>; Вып. 1651 (1451)).&nbsp;—
+                        5000 экз.&nbsp;— <a
+                            href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BA%D0%BD%D0%B8%D0%B3/9785235036734"
+                            class="internal mw-magiclink-isbn">ISBN 978-5-235-03673-4</a>.</li>
+                </ul>
+                <ul>
+                    <li>«<a href="/w/index.php?title=%D0%A1%D1%82%D1%80%D0%B0%D1%81%D1%82%D0%B8_%D1%83%D0%BC%D0%B0_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Страсти ума (роман) (страница отсутствует)">Страсти ума</a>» (<a
+                            href="/wiki/1971_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="1971 год в литературе">1971</a>) <a
+                            href="/wiki/%D0%A1%D1%82%D0%BE%D1%83%D0%BD,_%D0%98%D1%80%D0%B2%D0%B8%D0%BD%D0%B3"
+                            title="Стоун, Ирвинг">Ирвинга Стоуна</a>,</li>
+                    <li>«<a href="/w/index.php?title=%D0%A0%D1%8D%D0%B3%D1%82%D0%B0%D0%B9%D0%BC_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Рэгтайм (роман) (страница отсутствует)">Рэгтайм</a>» (<a
+                            href="/wiki/1975_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="1975 год в литературе">1975</a>) <a
+                            href="/wiki/%D0%94%D0%BE%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D1%83,_%D0%AD%D0%B4%D0%B3%D0%B0%D1%80_%D0%9B%D0%BE%D1%83%D1%80%D0%B5%D0%BD%D1%81"
+                            class="mw-redirect" title="Доктороу, Эдгар Лоуренс">Эдгара Доктороу</a>,</li>
+                    <li>«<a href="/w/index.php?title=%D0%91%D0%B5%D0%BB%D1%8B%D0%B9_%D0%BE%D1%82%D0%B5%D0%BB%D1%8C_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Белый отель (роман) (страница отсутствует)">Белый отель</a>» (<a
+                            href="/wiki/1981_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="1981 год в литературе">1981</a>) <a
+                            href="/wiki/%D0%A2%D0%BE%D0%BC%D0%B0%D1%81,_%D0%94._%D0%9C."
+                            title="Томас, Д. М.">Д.&nbsp;М.&nbsp;Томаса</a>,</li>
+                    <li>«<a href="/w/index.php?title=%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0_%D0%9D%D0%B8%D1%86%D1%88%D0%B5_%D0%BF%D0%BB%D0%B0%D0%BA%D0%B0%D0%BB_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Когда Ницше плакал (роман) (страница отсутствует)">Когда Ницше
+                            плакал</a>» (<a
+                            href="/wiki/1992_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="1992 год в литературе">1992</a>) <a
+                            href="/wiki/%D0%AF%D0%BB%D0%BE%D0%BC,_%D0%98%D1%80%D0%B2%D0%B8%D0%BD_%D0%94%D1%8D%D0%B2%D0%B8%D0%B4"
+                            title="Ялом, Ирвин Дэвид">Ирвина Ялома</a>,</li>
+                    <li>«<a href="/w/index.php?title=%D0%A8%D0%BA%D0%B0%D1%82%D1%83%D0%BB%D0%BA%D0%B0_%D1%81%D0%BD%D0%BE%D0%B2%D0%B8%D0%B4%D0%B5%D0%BD%D0%B8%D0%B9_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Шкатулка сновидений (роман) (страница отсутствует)">Шкатулке
+                            сновидений</a>» (<a
+                            href="/wiki/2003_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="2003 год в литературе">2003</a>) <a
+                            href="/w/index.php?title=%D0%9C%D1%8D%D0%B4%D1%81%D0%BE%D0%BD,_%D0%94%D1%8D%D0%B2%D0%B8%D0%B4&amp;action=edit&amp;redlink=1"
+                            class="new" title="Мэдсон, Дэвид (страница отсутствует)">Д. Мэдсона</a>,</li>
+                    <li>«<a href="/w/index.php?title=%D0%A3%D0%B1%D0%B8%D0%B9%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D0%BE_%D0%A4%D1%80%D0%B5%D0%B9%D0%B4%D1%83_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Убийство по Фрейду (роман) (страница отсутствует)">Убийство по
+                            Фрейду</a>» (<a
+                            href="/wiki/2006_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="2006 год в литературе">2006</a>) <span data-interwiki-lang="en"
+                            data-interwiki-article="Jed Rubenfeld"><a
+                                href="/w/index.php?title=%D0%A0%D1%83%D0%B1%D0%B5%D0%BD%D1%84%D0%B5%D0%BB%D1%8C%D0%B4,_%D0%94%D0%B6%D0%B5%D0%B4&amp;action=edit&amp;redlink=1"
+                                class="new" title="Рубенфельд, Джед (страница отсутствует)">Джеда
+                                Рубенфельда</a></span><span style="font-style:normal; font-weight:normal;"><sup
+                                class="noprint"><a href="https://en.wikipedia.org/wiki/Jed_Rubenfeld" class="extiw"
+                                    title="en:Jed Rubenfeld"><span
+                                        title="Jed Rubenfeld — версия статьи «Рубенфельд, Джед» на английском языке">[en]</span></a></sup></span>,
+                    </li>
+                    <li>«<a href="/w/index.php?title=%D0%9C%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Маленькая книга (роман) (страница отсутствует)">Маленькая книга</a>» (<a
+                            href="/wiki/2008_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="2008 год в литературе">2008</a>) <a
+                            href="/w/index.php?title=%D0%AD%D0%B4%D0%B2%D0%B0%D1%80%D0%B4%D1%81,_%D0%A1%D0%B5%D0%BB%D0%B4%D0%B5%D0%BD&amp;action=edit&amp;redlink=1"
+                            class="new" title="Эдвардс, Селден (страница отсутствует)">Селдена Эдвардса</a>,</li>
+                    <li>«<a href="/wiki/%D0%9F%D1%80%D0%B0%D0%B6%D1%81%D0%BA%D0%BE%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B4%D0%B1%D0%B8%D1%89%D0%B5"
+                            title="Пражское кладбище">Пражское кладбище</a>» (<a
+                            href="/wiki/2010_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="2010 год в литературе">2010</a>) <a
+                            href="/wiki/%D0%AD%D0%BA%D0%BE,_%D0%A3%D0%BC%D0%B1%D0%B5%D1%80%D1%82%D0%BE"
+                            title="Эко, Умберто">Умберто Эко</a>,</li>
+                    <li>«<a href="/w/index.php?title=%D0%92%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%82%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)&amp;action=edit&amp;redlink=1"
+                            class="new" title="Венский треугольник (роман) (страница отсутствует)">Венский
+                            треугольник</a>» (<a
+                            href="/wiki/2009_%D0%B3%D0%BE%D0%B4_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B5"
+                            title="2009 год в литературе">2009</a>) <span data-interwiki-lang="en"
+                            data-interwiki-article="Brenda Webster"><a
+                                href="/w/index.php?title=%D0%92%D0%B5%D0%B1%D1%81%D1%82%D0%B5%D1%80,_%D0%91%D1%80%D0%B5%D0%BD%D0%B4%D0%B0&amp;action=edit&amp;redlink=1"
+                                class="new" title="Вебстер, Бренда (страница отсутствует)">Бренды
+                                Вебстер</a></span><span style="font-style:normal; font-weight:normal;"><sup
+                                class="noprint"><a href="https://en.wikipedia.org/wiki/Brenda_Webster" class="extiw"
+                                    title="en:Brenda Webster"><span
+                                        title="Brenda Webster — версия статьи «Вебстер, Бренда» на английском языке">[en]</span></a></sup></span><sup
+                            id="cite_ref-FBooks_200-0" class="reference"><a
+                                href="#cite_note-FBooks-200">[200]</a></sup>.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

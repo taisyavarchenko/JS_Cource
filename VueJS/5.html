@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <ul id="app">
+        <li v-for="(item,index) in items" v-on:click="buy(index)">
+            {{item.title}} - {{item.value}} {{item.seen ? 'выбрано' : ''}}
+        </li>
+        <span>Общая стоимость: {{sum}}</span>
+    </ul>
+</body>
+<script src="./5.js"></script>
+</html>

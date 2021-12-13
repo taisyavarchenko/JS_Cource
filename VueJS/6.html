@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="setType('grid')" type="button">Grid</button>
+        <button v-on:click="setType('list')" type="button">List</button>
+        <div v-if="type=='grid'">
+            <div v-for="artical in articals" style="float: left;text-align: center; margin: 1rem;"> 
+                <a v-bind:href="artical.url">
+                    <img v-bind:src="artical.image" alt="Image">
+                </a>
+            </div>
+        </div>
+        <div v-if="type=='list'">
+            <ul>
+                <li v-for="artical in articals">
+                    <a v-bind:href="artical.url">
+                        <img v-bind:src="artical.image" alt="Image" width="25px" height="25px">
+                        {{artical.title}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="./6.js"></script>
+</html>

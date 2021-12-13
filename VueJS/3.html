@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="search">
+        <input v-model="message">
+        <button v-on:click="open" type="button">Поиск</button>
+        <div>
+            <p v-for="artical in articals">
+                <span v-if="artical.seen"> 
+                    <a v-bind:href="artical.url">{{ artical.title }}</a>
+                    <img v-bind:src="artical.image">
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="./3.js"></script>
+</html>

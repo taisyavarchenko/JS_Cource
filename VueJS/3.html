@@ -8,19 +8,35 @@
     <!-- версия для разработки, отображает полезные предупреждения в консоли -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
-<body>
-    <div id="search">
+<body style="display: flex; ">
+    <div id="search" style="max-width: 1170px;margin-left: auto;margin-right: auto;padding-left: 16px;padding-right: 16px;">
         <input v-model="message">
         <button v-on:click="open" type="button">Поиск</button>
         <div>
-            <p v-for="artical in articals">
-                <span v-if="artical.seen"> 
-                    <a v-bind:href="artical.url" style="display: flex; flex-direction: column; width: 50px; background-color: #ddd; padding: 5px;">
-                        <img v-bind:src="artical.image" style="height: 40px;">
-                        <span>{{ artical.title }}</span>
-                    </a>
-                </span>
-            </p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Ссылка</th>
+                        <th>Картинка</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <tr v-for="artical in articals" v-if="artical.seen">
+                        <td bgcolor="#ddd" style="text-align: center; padding: 5px;">
+                            {{ artical.title }}
+                        </td>
+                        <td>
+                            <a v-bind:href="artical.url">
+                                {{ artical.url }}
+                            </a>
+                        </td>
+                        <td bgcolor="#ddd" style="text-align: center; padding: 5px;">
+                            <img v-bind:src="artical.image" style="height: 40px;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
